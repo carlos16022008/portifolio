@@ -5,8 +5,114 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu portifolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <header>
+        <h1>Meu Portfólio</h1>
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contatos">Contatos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="sobre" class="section">
+        <h2>Sobre Mim</h2>
+        <img src="./images/perfil.jpg" alt="Foto de Perfil" class="perfil">
+        <p>
+            Olá! Meu nome é Carlos Stuqui, sou estudante do curso Técnico de Desenvolvimento de Sistemas 
+            na escola Monsenhor Sarrion e este é meu portifolio. Aqui você encontra alguns projetos que 
+            desenvolvi durante o curso.
+        </p>
+    </section>
+
+    <section id="projetos" class="section">
+        <h2>Meus Projetos</h2>
+        <div class="projetos-container">
+            <div class="card">
+                <img src="https://picsum.photos/300/200?random=1" alt="Projeto 1" loading="lazy">
+                <h3>Projeto 1</h3>
+                <p>Descrição do Projeto 1.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://picsum.photos/300/200?random=2" alt="Projeto 2" loading="lazy">
+                <h3>Projeto 2</h3>
+                <p>Descrição do Projeto 2.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://picsum.photos/300/200?random=3" alt="Projeto 3" loading="lazy">
+                <h3>Projeto 3</h3>
+                <p>Descrição do Projeto 3.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contatos" class="section">
+        <h2>Contatos</h2>
+        <p class="subtitl">Estou disponível para oportunidades e colaborações.</p>
     
+        <div class="contact-grid">
+            <div class="contact-card">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <h3>E-mail</h3>
+                    <a href="mailto:carloseduardosantostuqui@gmail.com">carloseduardosantostuqui@gmail.com</a>
+                </div>
+            </div>
+
+            <div class="contact-card">
+                <i class="fas fa-phone"></i>
+                <div>
+                    <h3>Celular</h3>
+                    <span>(18) 99641-8073</span>
+                </div>
+            </div>
+
+            <div class="social-box">
+                <h3>Redes Sociais</h3>
+                <div class="social-liks">
+                    <a href="https://www.linkedin.com/in/carlos-stuqui-21009a306/" class="btn linkedin" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                        linkedin
+                    </a>
+
+                    <a href="https://github.com/carlos16022008" class="btn github" target="_blank">
+                        <i class="fab fa-github"></i>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 - Portfólio Carlos Stuqui</p>
+    </footer>
+
+    <script>
+        // Função para fade-in ao scroll
+        const sections = document.querySelectorAll('.section');
+        const options = {
+          threshold: 0.1
+        };
+     
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('show');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, options);
+     
+        sections.forEach(section => {
+          observer.observe(section);
+        });
+      </script>
 </body>
 </html>
